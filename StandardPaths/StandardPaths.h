@@ -43,6 +43,12 @@
 #endif
 
 
+#if TARGET_OS_IPHONE
+
+#define UIUserInterfaceIdiomDesktop (UIUserInterfaceIdiomPad + 1)
+
+#else
+
 #ifndef UI_USER_INTERFACE_IDIOM
 #define UI_USER_INTERFACE_IDIOM() UIUserInterfaceIdiomDesktop
 
@@ -53,10 +59,7 @@ typedef NS_ENUM(NSInteger, UIUserInterfaceIdiom)
     UIUserInterfaceIdiomPad,
     UIUserInterfaceIdiomDesktop
 };
-
-#elif TARGET_OS_IPHONE
-
-#define UIUserInterfaceIdiomDesktop (UIUserInterfaceIdiomPad + 1)
+#endif
 
 #endif
 
